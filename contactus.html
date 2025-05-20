@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== REMIXICONS ===============-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/tab.css" />
+    <link rel="stylesheet" href="assets/css/ara.css" />
+
+    <!-- ================ BOOTSTRAP CSS =================  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Ara Technologies</title>
+
+    <!-- ================ AOS Library ===================  -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      body {
+        background-color: #fff;
+        color: #000;
+        font-family: var(--body-font);
+        overflow-x: hidden;
+      }
+
+      .contact-section {
+        padding: 160px 20px;
+      }
+
+      .hero-section {
+        margin-top: 150px;
+      }
+      /* .contact-card {
+        background-color: #f8f9fa;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        margin-bottom: 30px;
+        transition: transform 0.5s ease, box-shadow 0.3s ease;
+        transform-style: preserve-3d;
+      } */
+
+      /* .contact-card:hover {
+        transform: rotateY(5deg) scale(1.02);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+      } */
+      /* .contact-btn {
+        background-color: #ed2024;
+        color: #fff;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+
+      .contact-btn:hover {
+        background-color: #c81a1d;
+      } */
+
+      .icon-box {
+        margin-bottom: 20px;
+      }
+
+      .icon-box img {
+        height: 50px;
+        width: 50px;
+      }
+
+      .contact-info,
+      .contact-form {
+        transition: all 0.3s ease-in-out;
+        background-color: white;
+        z-index: 1;
+      }
+
+      .contact-form h4 {
+        color: #ed2024;
+      }
+
+      .contact-form:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .contact-section h5 {
+        color: #ed2024;
+      }
+
+      .contact-section .form-control,
+      .contact-section .form-select {
+        border-radius: 8px;
+        border: 1px solid #ddd;
+      }
+
+      .contact-section .form-control:focus,
+      .contact-section .form-select:focus {
+        border-color: #ed2024;
+        box-shadow: 0 0 0 0.1rem rgba(243, 86, 88, 0.25);
+      }
+
+      .contact-item {
+        padding: 1rem;
+        margin-bottom: 20px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .contact-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+      }
+
+      .icon-box img {
+        display: block;
+        margin: 0 auto;
+        height: 30px;
+        width: 30px;
+      }
+
+      /* .cta-buttons{
+        margin-top: 50px;
+      }
+
+      .cta-buttons a {
+        display: inline-block;
+        margin: 10px 0;
+        padding: 12px 24px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      .cta-buttons a.demo {
+        background-color: #ed2024;
+        color: white;
+      }
+
+      .cta-buttons a.expert {
+        border: 2px solid #ed2024;
+        color: #ed2024;
+      }
+
+      .cta-buttons a.brochure {
+        background-color: #28a745;
+        color: white;
+      } */
+
+      .map-container {
+        height: 400px;
+        border-radius: 15px;
+        overflow: hidden;
+        margin-top: 40px;
+      }
+
+      .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 999;
+        background-color: #25d366;
+        border-radius: 50%;
+        padding: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+      }
+
+      .whatsapp-float:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!--=============== HEADER ===============-->
+    <header class="header ara--header">
+      <nav class="nav ara--nav container mx-auto">
+        <div class="nav__data ara--nav-content">
+          <a href="index.html" class="ara--nav-logo">
+            <img
+              src="assets/img/Ara Tech Logo.png"
+              class="img-fluid ms-3"
+              alt="Ara Tech Logo"
+            />
+          </a>
+
+          <!-- Responsive Buttons -->
+          <div class="nav__toggle ara--nav-toggle" id="nav-toggle">
+            <i class="ri-menu-line nav__toggle-menu ara--nav-toggle-menu"></i>
+            <i
+              class="ri-close-line nav__toggle-close ara--nav-toggle-close"
+            ></i>
+          </div>
+          <div class="nav-search-two">
+            <a href="#" class="nav__link">
+              <i class="ri-search-line icon-search" id="icon-search"></i>
+            </a>
+            <div class="box-2">
+              <input
+                type="search"
+                id="search-input"
+                placeholder="Search for product overviews and more..."
+              />
+              <i class="ri-close-line" id="close"></i>
+              <i class="ri-search-line" id="icon-2"></i>
+            </div>
+          </div>
+        </div>
+
+        <!--=============== NAV MENU ===============-->
+        <div class="nav__menu ara--nav-menu" id="nav-menu">
+          <ul class="nav__list ara--nav-list">
+            <li>
+              <a href="index.html" class="nav__link ara--nav-link">Home</a>
+            </li>
+            <!--=============== DROPDOWN 1 ===============-->
+            <li class="dropdown__item ara--nav-dropdown-item">
+              <div
+                class="ara--nav-link dropdown__button ara--nav-dropdown-button"
+              >
+                Solutions
+                <i
+                  class="ri-arrow-down-s-line dropdown__arrow ara--nav-dropdown-arrow"
+                ></i>
+              </div>
+              <div class="dropdown__container ara--nav-dropdown-container">
+                <div class="dropdown-left">
+                  <div class="dropdown__content ara--nav-dropdown-content">
+                    <div class="dropdown__group ara--nav-dropdown-group">
+                      <div class="dropdown__icon ara--nav-dropdown-icon">
+                        <i class="ri-graduation-cap-fill"></i>
+                      </div>
+                      <span class="dropdown__title ara--nav-dropdown-title"
+                        >Education</span
+                      >
+                      <ul class="dropdown__list ara--nav-dropdown-list">
+                        <li>
+                          <a
+                            href="#"
+                            class="dropdown__link ara--nav-dropdown-link"
+                            >Schoolmate</a
+                          >
+                        </li>
+                        <!-- <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">School Management</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Hotel Booking</a>
+                            </li> -->
+                      </ul>
+                    </div>
+                    <!-- <div class="dropdown__group ara--nav-dropdown-group">
+                         <div class="dropdown__icon ara--nav-dropdown-icon">
+                            <i class="ri-price-tag-3-line"></i>
+                         </div>
+                         <span class="dropdown__title ara--nav-dropdown-title">Retail</span>
+                         <ul class="dropdown__list ara--nav-dropdown-list">
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Billing Software</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">School Management</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Hotel Booking</a>
+                            </li>
+                         </ul>
+                      </div> -->
+                    <!-- <div class="dropdown__group ara--nav-dropdown-group">
+                         <div class="dropdown__icon ara--nav-dropdown-icon">
+                            <i class="ri-bar-chart-2-line"></i>
+                         </div>
+                         <span class="dropdown__title ara--nav-dropdown-title">Travel</span>
+                         <ul class="dropdown__list ara--nav-dropdown-list">
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Billing Software</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">School Management</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Hotel Booking</a>
+                            </li>
+                         </ul>
+                      </div> -->
+                    <!-- <div class="dropdown__group ara--nav-dropdown-group">
+                         <div class="dropdown__icon ara--nav-dropdown-icon">
+                            <i class="ri-macbook-fill"></i>
+                         </div>
+                         <span class="dropdown__title ara--nav-dropdown-title">IT Services</span>
+                         <ul class="dropdown__list ara--nav-dropdown-list">
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Billing Software</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">School Management</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Hotel Booking</a>
+                            </li>
+                         </ul>
+                      </div> -->
+                    <!-- <div class="dropdown__group ara--nav-dropdown-group">
+                         <div class="dropdown__icon ara--nav-dropdown-icon">
+                            <i class="ri-signal-tower-fill"></i>
+                         </div>
+                         <span class="dropdown__title ara--nav-dropdown-title">Telecommunication</span>
+                         <ul class="dropdown__list ara--nav-dropdown-list">
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Billing Software</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">School Management</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Hotel Booking</a>
+                            </li>
+                         </ul>
+                      </div> -->
+                    <!-- <div class="dropdown__group ara--nav-dropdown-group">
+                         <div class="dropdown__icon ara--nav-dropdown-icon">
+                            <i class="ri-government-line"></i>
+                         </div>
+                         <span class="dropdown__title ara--nav-dropdown-title">Government</span>
+                         <ul class="dropdown__list ara--nav-dropdown-list">
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Billing Software</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">School Management</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Hotel Booking</a>
+                            </li>
+                         </ul>
+                      </div> -->
+                  </div>
+                </div>
+                <div class="dropdown-right">
+                  <div class="right__content">
+                    <div class="team__group">
+                      <h6 class="ara-fw-semi-bold">Teams</h6>
+                      <div class="group-icon">
+                        <a href="" class="icon-link">
+                          <i class="ri-customer-service-fill"></i>
+                          <span class="ara--nav-dropdown-title"
+                            >Customer Support</span
+                          >
+                        </a>
+                      </div>
+                      <div class="group-icon">
+                        <a href="" class="icon-link">
+                          <i class="ri-checkbox-line"></i>
+                          <span class="ara--nav-dropdown-title"
+                            >IT Support</span
+                          ></a
+                        >
+                      </div>
+                      <div class="group-icon">
+                        <a href="" class="icon-link"
+                          ><i class="ri-building-fill"></i>
+                          <span class="ara--nav-dropdown-title"
+                            >Human Resources</span
+                          ></a
+                        >
+                      </div>
+                      <div class="group-icon">
+                        <a href="" class="icon-link"
+                          ><i class="ri-building-fill"></i>
+                          <span class="ara--nav-dropdown-title"
+                            >Facilities</span
+                          ></a
+                        >
+                      </div>
+                      <div class="group-icon">
+                        <a href="" class="icon-link"
+                          ><i class="ri-building-fill"></i>
+                          <span class="ara--nav-dropdown-title"
+                            >Marketing</span
+                          ></a
+                        >
+                      </div>
+                      <div class="group-icon">
+                        <a href="" class="icon-link"
+                          ><i class="ri-building-fill"></i>
+                          <span class="ara--nav-dropdown-title">Sales</span></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#" class="ara--nav-link">Customers</a>
+            </li>
+            <li>
+              <a href="about.html" class="ara--nav-link active">About Us</a>
+            </li>
+            <li>
+              <a href="contactus.html" class="ara--nav-link">Contact Us</a>
+           </li>
+            <li>
+              <a href="#" class="ara--nav-link">
+                <i class="ri-more-line"></i>
+              </a>
+            </li>
+
+            <!-- Responsive button -->
+            <li class="nav__responsive-demo ara--nav-responsive-demo">
+              <a href="#" class="nav__button ara--nav-button">Get a demo</a>
+            </li>
+          </ul>
+
+          <!-- Search Section -->
+          <div class="search-content">
+            <input
+              type="search"
+              id="search-box"
+              placeholder="Search for product overviews and more..."
+            />
+            <i class="ri-close-line close-btn" id="close-btn"></i>
+            <i class="ri-search-line" id="search-2"></i>
+          </div>
+        </div>
+        <div class="ara--nav-content nav__desk__button ara--nav-desk-button">
+          <a href="#" class="nav__link nav-search">
+            <i class="ri-search-line" id="search-icon"></i>
+          </a>
+          <a href="#" class="nav__button ara--nav-button">Get a demo</a>
+        </div>
+      </nav>
+    </header>
+    <!--=============== HEADER END ===============-->
+
+    <!-- Contact Section -->
+    <section class="contact-section container py-5">
+      <div class="text-center mb-5 hero-section" data-aos="fade-down">
+        <h1
+          class="display-4"
+          style="color: #ed2024; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); font-weight: bold;"
+        >
+          Have an Idea? 
+        </h1>
+        <h4 style="color: #ed2024; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1)">Let’s Build It Together.</h4>
+        <p
+          class="lead mt-3"
+          style="
+            max-width: 1000px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: #444;
+          "
+        >
+          Whether you need a school management solution, a custom mobile app, or
+          an entire ERP system — we’re here to help. Connect with our team to
+          schedule a free consultation or request a product demo.
+        </p>
+      </div>
+
+      <div class="row gx-5 align-items-start hero-section">
+        <!-- Left Side - Contact Info -->
+        <div class="col-lg-5" data-aos="fade-right">
+          <div class="contact-info">
+            <!-- Address -->
+            <div class="contact-item text-center mb-4">
+              <div class="icon-box mb-2">
+                <img
+                  src="./assets/img/location.png"
+                  alt="Location"
+                  width="32"
+                />
+              </div>
+              <h5 class="mb-1">Address</h5>
+              <p class="text-muted mb-0">
+                ARA Discover Technologies,<br />Thanjavur, Tamil Nadu, India –
+                613009
+              </p>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-item text-center mb-4">
+              <div class="icon-box mb-2">
+                <img src="./assets/img/telephone.png" alt="Phone" width="32" />
+              </div>
+              <h5 class="mb-1">Phone</h5>
+              <p class="text-muted mb-0">+91-98765-43210</p>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-item text-center mb-4">
+              <div class="icon-box mb-2">
+                <img src="./assets/img/mail.png" alt="Email" width="32" />
+              </div>
+              <h5 class="mb-1">Email</h5>
+              <p class="text-muted mb-0">
+                <a
+                  href="mailto:hello@aradiscover.com"
+                  class="text-decoration-none text-muted"
+                  >hello@aradiscover.com</a
+                >
+              </p>
+            </div>
+
+            <!-- Website -->
+            <div class="contact-item text-center">
+              <div class="icon-box mb-2">
+                <img
+                  src="./assets/img/world-wide-web.png"
+                  alt="Website"
+                  width="32"
+                />
+              </div>
+              <h5 class="mb-1">Website</h5>
+              <p class="text-muted mb-0">
+                <a
+                  href="https://www.aradiscover.com"
+                  target="_blank"
+                  class="text-decoration-none text-muted"
+                  >www.aradiscover.com</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side - Contact Form -->
+        <div class="col-lg-7 mt-4 mt-lg-0" data-aos="fade-left">
+          <div class="contact-form p-4 rounded shadow-sm bg-white">
+            <h4 class="mb-4 text-center">Send Us a Message</h4>
+            <form>
+              <div class="mb-3">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fullName"
+                  placeholder="Your Full Name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="company" class="form-label"
+                  >Company/Institution Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="company"
+                  placeholder="Your Company or Institution"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Your Email"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="phone"
+                  placeholder="Your Phone Number"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="service" class="form-label"
+                  >Service Interested In</label
+                >
+                <select class="form-select" id="service">
+                  <option selected disabled>Choose a Service</option>
+                  <option value="consulting">Consulting</option>
+                  <option value="development">Development</option>
+                  <option value="design">Design</option>
+                  <option value="support">Support</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="5"
+                  placeholder="Your Message"
+                ></textarea>
+              </div>
+              <div class="text-center">
+                <button
+                  type="submit"
+                  class="btn btn-primary px-4 py-2"
+                  style="background-color: #ed2024; border: none"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="cta-buttons text-center">
+        <a href="#book-demo" class="demo">Book a Free Demo</a>
+        <a href="#talk-expert" class="expert">Talk to an Expert</a>
+        <a href="#" class="brochure" download>Download Brochure</a>
+      </div> -->
+
+      <!-- Map Section -->
+      <div class="map-container mt-5" data-aos="fade-up">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.34122412128!2d79.12459417451731!3d10.785156259033688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baab986fba40a6b%3A0xc60663bc6b08e04e!2sARA%20Discoveries%20Pvt%20Ltd%20%E2%80%93%20IT%20Solutions%20%26%20Digital%20Marketing%20Company!5e0!3m2!1sen!2sin!4v1747640712832!5m2!1sen!2sin"
+          width="100%"
+          height="100%"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- ================ SECTION FOOTER START ============= -->
+    <section class="section-footer container-fluid p-5">
+      <div class="container p-5">
+        <div class="row mx-auto my-auto g-4 justify-content-lg-evenly">
+          <div class="col-lg-2 col-md-4 col-12">
+            <h4 class="ara-fw-semi-bold">Products</h4>
+            <a href="">Schoolmate</a>
+          </div>
+          <div class="col-lg-2 col-md-4 col-12">
+            <h4 class="ara-fw-semi-bold">Quick Links</h4>
+            <a href="">About Us</a> <br />
+            <a href="">Solutions</a> <br />
+            <a href="">Contact Us</a>
+          </div>
+          <div class="col-lg-2 col-md-4 col-12">
+            <h4 class="ara-fw-semi-bold">Support</h4>
+            <a href="">Help Center</a> <br />
+            <a href="">FAQs</a> <br />
+            <a href="">User Guides</a> <br />
+          </div>
+          <div class="col-lg-2 col-md-4 col-12">
+            <h4 class="ara-fw-semi-bold">Legel</h4>
+            <a href="">Privacy Policy </a> <br />
+            <a href="">Terms & Conditions</a> <br />
+          </div>
+          <div class="col-lg-2 col-md-4 col-12">
+            <h4 class="ara-fw-semi-bold">Contact Us</h4>
+            <a href="">Email</a> <br />
+            <a href="">Phone</a> <br />
+            <a href="">Address</a> <br />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= COPYRIGHT START ======== -->
+    <div
+      class="d-flex justify-content-center align-items-center w-100 copyright"
+    >
+      <h6>
+        © 2025, ARA Discover Technologies Pvt. Ltd. | Preserving Innovation.
+      </h6>
+    </div>
+    <!-- ========= COPYRIGHT END ======== -->
+    <!--=========== SECTION FOOTER END ============= -->
+
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/918072072794"
+      class="whatsapp-float"
+      target="_blank"
+      aria-label="Chat on WhatsApp"
+    >
+      <img
+        src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"
+        alt="WhatsApp Chat"
+      />
+    </a>
+
+   <script src="assets/js/main.js"></script>
+
+    <!-- ============ BOOTSTRAP JS =========== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    </script>
+  </body>
+</html>

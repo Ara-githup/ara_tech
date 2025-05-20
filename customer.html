@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== REMIXICONS ===============-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/tab.css" />
+    <link rel="stylesheet" href="assets/css/ara.css" />
+
+    <!-- ================ BOOTSTRAP CSS =================  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Ara Technologies</title>
+
+    <!-- ================ AOS Library ===================  -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      :root {
+        --primary-color: #ed2024;
+        --text-color: #000;
+        --bg-color: #fff;
+        --shadow-color: rgba(0, 0, 0, 0.1);
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        overflow-x: hidden;
+      }
+
+      .hero-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 20px;
+        margin-top: 8rem;
+      }
+
+      .headline {
+        text-align: center;
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      .intro {
+        text-align: center;
+        font-size: 1.2rem;
+        margin-bottom: 50px;
+        color: #444;
+        line-height: 1.6;
+      }
+
+      /* Grid layout: 2 columns, 2 rows */
+      .segments-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      /* Mobile View: 1 card per row */
+      @media (max-width: 768px) {
+        .segments-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Base Card Style */
+      .segment-card {
+        background-color: #ffffff;
+        border-left: 4px solid transparent;
+        border-radius: 0.5rem;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        padding: 1.5rem;
+        position: relative;
+        overflow: hidden;
+        transition: all 2.2s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        height: auto;
+        cursor: pointer;
+      }
+
+      /* Hover: highlight and visually expand internally */
+      .segment-card:hover {
+        background-color: #ffeaea;
+        border-left: 6px solid #ed2024;
+        box-shadow: 0 6px 20px rgba(237, 32, 36, 0.2);
+        transform: scale(1.03); /* slight visual enlargement */
+        z-index: 1;
+      }
+
+      /* Icon */
+      .segment-icon {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Title */
+      .segment-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #000000;
+      }
+
+      /* Description */
+      .segment-text {
+        opacity: 0;
+        transform: translateX(40px);
+        transition: all 1.2s ease-in-out;
+        font-size: 0.95rem;
+        color: #000000;
+        margin-top: 0.5rem;
+        line-height: 1.5;
+        max-height: 0;
+        overflow: hidden;
+      }
+
+      /* Reveal description */
+      .segment-card:hover .segment-text {
+        opacity: 1;
+        transform: translateX(0);
+        max-height: 200px;
+      }
+
+      /* Underline animation */
+      .segment-card::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%) translateY(100%);
+        width: 40px;
+        height: 4px;
+        background-color: #ed2024;
+        transition: transform 1.1s ease;
+      }
+
+      /* Underline appears */
+      .segment-card:hover::before {
+        transform: translateX(-50%) translateY(0);
+      }
+
+      .testimonials {
+        margin-top: 80px;
+        text-align: center;
+      }
+
+      .testimonial-card {
+        background: #f9f9f9;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px var(--shadow-color);
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .testimonial-quote {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        font-style: italic;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .testimonial-author {
+        font-weight: bold;
+        color: var(--primary-color);
+      }
+
+      .animated-divider {
+        width: 60px;
+        height: 4px;
+        background: var(--primary-color);
+        margin: 20px auto;
+        animation: pulse 2s infinite ease-in-out;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scaleX(1);
+        }
+        50% {
+          transform: scaleX(1.5);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--=============== HEADER ===============-->
+    <header class="header ara--header">
+      <nav class="nav ara--nav container mx-auto">
+        <div class="nav__data ara--nav-content">
+          <a href="index.html" class="ara--nav-logo">
+            <img
+              src="assets/img/Ara Tech Logo.png"
+              class="img-fluid ms-3"
+              alt="Ara Tech Logo"
+            />
+          </a>
+
+          <!-- Responsive Buttons -->
+          <div class="nav__toggle ara--nav-toggle" id="nav-toggle">
+            <i class="ri-menu-line nav__toggle-menu ara--nav-toggle-menu"></i>
+            <i
+              class="ri-close-line nav__toggle-close ara--nav-toggle-close"
+            ></i>
+          </div>
+          <div class="nav-search-two">
+            <a href="#" class="nav__link">
+              <i class="ri-search-line icon-search" id="icon-search"></i>
+            </a>
+            <div class="box-2">
+              <input
+                type="search"
+                id="search-input"
+                placeholder="Search for product overviews and more..."
+              />
+              <i class="ri-close-line" id="close"></i>
+              <i class="ri-search-line" id="icon-2"></i>
+            </div>
+          </div>
+        </div>
+
+        <!--=============== NAV MENU ===============-->
+        <div class="nav__menu ara--nav-menu" id="nav-menu">
+          <ul class="nav__list ara--nav-list">
+            <li>
+              <a href="index.html" class="nav__link ara--nav-link">Home</a>
+            </li>
+            <!--=============== DROPDOWN 1 ===============-->
+            <li class="dropdown__item ara--nav-dropdown-item">
+              <div
+                class="ara--nav-link dropdown__button ara--nav-dropdown-button"
+              >
+                Solutions
+                <i
+                  class="ri-arrow-down-s-line dropdown__arrow ara--nav-dropdown-arrow"
+                ></i>
+              </div>
+              <div class="dropdown__container ara--nav-dropdown-container">
+                <div class="dropdown-left">
+                  <div class="dropdown__content ara--nav-dropdown-content">
+                    <div class="dropdown__group ara--nav-dropdown-group">
+                      <div class="dropdown__icon ara--nav-dropdown-icon">
+                        <i class="ri-graduation-cap-fill"></i>
+                      </div>
+                      <span class="dropdown__title ara--nav-dropdown-title"
+                        >Education</span
+                      >
+                      <ul class="dropdown__list ara--nav-dropdown-list">
+                        <li>
+                          <a
+                            href="#"
+                            class="dropdown__link ara--nav-dropdown-link"
+                            >Schoolmate</a
+                          >
+                        </li>
+                        <!-- <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">School Management</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Hotel Booking</a>
+                            </li> -->
+                      </ul>
+                    </div>
+                    <!-- <div class="dropdown__group ara--nav-dropdown-group">
+                         <div class="dropdown__icon ara--nav-dropdown-icon">
+                            <i class="ri-price-tag-3-line"></i>
+                         </div>
+                         <span class="dropdown__title ara--nav-dropdown-title">Retail</span>
+                         <ul class="dropdown__list ara--nav-dropdown-list">
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Billing Software</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">School Management</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Hotel Booking</a>
+                            </li>
+                         </ul>
+                      </div> -->
+                    <!-- <div class="dropdown__group ara--nav-dropdown-group">
+                         <div class="dropdown__icon ara--nav-dropdown-icon">
+                            <i class="ri-bar-chart-2-line"></i>
+                         </div>
+                         <span class="dropdown__title ara--nav-dropdown-title">Travel</span>
+                         <ul class="dropdown__list ara--nav-dropdown-list">
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Billing Software</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">School Management</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Hotel Booking</a>
+                            </li>
+                         </ul>
+                      </div> -->
+                    <!-- <div class="dropdown__group ara--nav-dropdown-group">
+                         <div class="dropdown__icon ara--nav-dropdown-icon">
+                            <i class="ri-macbook-fill"></i>
+                         </div>
+                         <span class="dropdown__title ara--nav-dropdown-title">IT Services</span>
+                         <ul class="dropdown__list ara--nav-dropdown-list">
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Billing Software</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">School Management</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Hotel Booking</a>
+                            </li>
+                         </ul>
+                      </div> -->
+                    <!-- <div class="dropdown__group ara--nav-dropdown-group">
+                         <div class="dropdown__icon ara--nav-dropdown-icon">
+                            <i class="ri-signal-tower-fill"></i>
+                         </div>
+                         <span class="dropdown__title ara--nav-dropdown-title">Telecommunication</span>
+                         <ul class="dropdown__list ara--nav-dropdown-list">
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Billing Software</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">School Management</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Hotel Booking</a>
+                            </li>
+                         </ul>
+                      </div> -->
+                    <!-- <div class="dropdown__group ara--nav-dropdown-group">
+                         <div class="dropdown__icon ara--nav-dropdown-icon">
+                            <i class="ri-government-line"></i>
+                         </div>
+                         <span class="dropdown__title ara--nav-dropdown-title">Government</span>
+                         <ul class="dropdown__list ara--nav-dropdown-list">
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Billing Software</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">School Management</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Hotel Booking</a>
+                            </li>
+                         </ul>
+                      </div> -->
+                  </div>
+                </div>
+                <div class="dropdown-right">
+                  <div class="right__content">
+                    <div class="team__group">
+                      <h6 class="ara-fw-semi-bold">Teams</h6>
+                      <div class="group-icon">
+                        <a href="" class="icon-link">
+                          <i class="ri-customer-service-fill"></i>
+                          <span class="ara--nav-dropdown-title"
+                            >Customer Support</span
+                          >
+                        </a>
+                      </div>
+                      <div class="group-icon">
+                        <a href="" class="icon-link">
+                          <i class="ri-checkbox-line"></i>
+                          <span class="ara--nav-dropdown-title"
+                            >IT Support</span
+                          ></a
+                        >
+                      </div>
+                      <div class="group-icon">
+                        <a href="" class="icon-link"
+                          ><i class="ri-building-fill"></i>
+                          <span class="ara--nav-dropdown-title"
+                            >Human Resources</span
+                          ></a
+                        >
+                      </div>
+                      <div class="group-icon">
+                        <a href="" class="icon-link"
+                          ><i class="ri-building-fill"></i>
+                          <span class="ara--nav-dropdown-title"
+                            >Facilities</span
+                          ></a
+                        >
+                      </div>
+                      <div class="group-icon">
+                        <a href="" class="icon-link"
+                          ><i class="ri-building-fill"></i>
+                          <span class="ara--nav-dropdown-title"
+                            >Marketing</span
+                          ></a
+                        >
+                      </div>
+                      <div class="group-icon">
+                        <a href="" class="icon-link"
+                          ><i class="ri-building-fill"></i>
+                          <span class="ara--nav-dropdown-title">Sales</span></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#" class="ara--nav-link">Customers</a>
+            </li>
+            <li>
+              <a href="about.html" class="ara--nav-link active">About Us</a>
+            </li>
+            <li>
+              <a href="contactus.html" class="ara--nav-link">Contact Us</a>
+            </li>
+            <li>
+              <a href="#" class="ara--nav-link">
+                <i class="ri-more-line"></i>
+              </a>
+            </li>
+
+            <!-- Responsive button -->
+            <li class="nav__responsive-demo ara--nav-responsive-demo">
+              <a href="#" class="nav__button ara--nav-button">Get a demo</a>
+            </li>
+          </ul>
+
+          <!-- Search Section -->
+          <div class="search-content">
+            <input
+              type="search"
+              id="search-box"
+              placeholder="Search for product overviews and more..."
+            />
+            <i class="ri-close-line close-btn" id="close-btn"></i>
+            <i class="ri-search-line" id="search-2"></i>
+          </div>
+        </div>
+        <div class="ara--nav-content nav__desk__button ara--nav-desk-button">
+          <a href="#" class="nav__link nav-search">
+            <i class="ri-search-line" id="search-icon"></i>
+          </a>
+          <a href="#" class="nav__button ara--nav-button">Get a demo</a>
+        </div>
+      </nav>
+    </header>
+    <!--=============== HEADER END ===============-->
+
+    <section class="hero-section">
+      <div class="headline" data-aos="fade-down">
+        Empowering Our Clients Across Industries
+      </div>
+      <div class="animated-divider"></div>
+      <p class="intro" data-aos="fade-up" data-aos-delay="100">
+        Our clients are our partners in innovation. From small educational
+        institutions to rapidly growing businesses, we empower them with digital
+        tools to thrive in an evolving market.
+      </p>
+    </section>
+
+    <!-- ======== Client Segments ======== -->
+    <section class="container" id="client-segments">
+      <h3 style="color: #ed2024; text-align: center; font-weight: bold">
+        Client Segments
+      </h3>
+      <!-- <div class="animated-divider"></div> -->
+      <div class="segments-grid">
+        <!-- Education Card -->
+        <div class="segment-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="segment-icon">🎓</div>
+          <div class="segment-title">Education Sector</div>
+          <div class="segment-text">
+            We help schools and colleges manage academics, attendance, results,
+            fee collection, and communication via our SchoolMate App.
+          </div>
+        </div>
+
+        <!-- Healthcare Card -->
+        <div class="segment-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="segment-icon">🏥</div>
+          <div class="segment-title">Healthcare Clinics</div>
+          <div class="segment-text">
+            We digitize patient records, appointment scheduling, treatment
+            tracking, and follow-up communications through secure health apps.
+          </div>
+        </div>
+
+        <!-- Retail Card -->
+        <div class="segment-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="segment-icon">🛒</div>
+          <div class="segment-title">Retail &amp; Showrooms</div>
+          <div class="segment-text">
+            Manage stock, customer loyalty, sales reports, and billing with
+            intuitive interfaces and cloud integration.
+          </div>
+        </div>
+
+        <!-- Startups & Enterprises Card -->
+        <div class="segment-card" data-aos="zoom-in" data-aos-delay="400">
+          <div class="segment-icon">🏢</div>
+          <div class="segment-title">Startups &amp; Enterprises</div>
+          <div class="segment-text">
+            We build custom portals and applications to streamline operations,
+            reporting, team collaboration, and more.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="container testimonials"
+      data-aos="zoom-in-up"
+      data-aos-delay="500"
+    >
+      <h3 style="color: #ed2024; font-weight: bold; text-align: center">
+        Testimonials
+      </h3>
+      <!-- <div class="animated-divider"></div> -->
+      <div class="testimonial-card">
+        <div class="testimonial-quote">
+          “ With SchoolMate from ARA, we transformed the way we communicate with
+          parents. It saved time, reduced paper, and made everything more
+          transparent. ”
+        </div>
+        <div class="testimonial-author">
+          — Principal, Morning Star Matric School, Thanjavur
+        </div>
+      </div>
+    </section>
+
+    <!-- ================ SECTION FOOTER START ============= -->
+    <section class="section-footer container-fluid p-5 mt-5">
+      <div class="container p-5">
+        <div class="row mx-auto my-auto g-4 justify-content-lg-evenly">
+          <div class="col-lg-2 col-md-4 col-12">
+            <h4 class="ara-fw-semi-bold">Products</h4>
+            <a href="">Schoolmate</a>
+          </div>
+          <div class="col-lg-2 col-md-4 col-12">
+            <h4 class="ara-fw-semi-bold">Quick Links</h4>
+            <a href="">About Us</a> <br />
+            <a href="">Solutions</a> <br />
+            <a href="">Contact Us</a>
+          </div>
+          <div class="col-lg-2 col-md-4 col-12">
+            <h4 class="ara-fw-semi-bold">Support</h4>
+            <a href="">Help Center</a> <br />
+            <a href="">FAQs</a> <br />
+            <a href="">User Guides</a> <br />
+          </div>
+          <div class="col-lg-2 col-md-4 col-12">
+            <h4 class="ara-fw-semi-bold">Legel</h4>
+            <a href="">Privacy Policy </a> <br />
+            <a href="">Terms & Conditions</a> <br />
+          </div>
+          <div class="col-lg-2 col-md-4 col-12">
+            <h4 class="ara-fw-semi-bold">Contact Us</h4>
+            <a href="">Email</a> <br />
+            <a href="">Phone</a> <br />
+            <a href="">Address</a> <br />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= COPYRIGHT START ======== -->
+    <div
+      class="d-flex justify-content-center align-items-center w-100 copyright"
+    >
+      <h6>
+        © 2025, ARA Discover Technologies Pvt. Ltd. | Preserving Innovation.
+      </h6>
+    </div>
+    <!-- ========= COPYRIGHT END ======== -->
+    <!--=========== SECTION FOOTER END ============= -->
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+
+    <!-- ============ BOOTSTRAP JS =========== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1200,
+        once: true,
+        easing: "ease-in-out",
+      });
+    </script>
+  </body>
+</html>

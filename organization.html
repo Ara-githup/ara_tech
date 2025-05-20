@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== REMIXICONS ===============-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/tab.css" />
+    <link rel="stylesheet" href="assets/css/ara.css" />
+
+    <!-- ================ BOOTSTRAP CSS =================  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Ara Technologies</title>
+
+    <!-- ================ AOS Library ===================  -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      :root {
+        --primary-color: #ed2024;
+        --text-dark: #000;
+        --text-light: #fff;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      body {
+        color: var(--text-dark);
+        line-height: 1.6;
+      }
+
+      .hero-section {
+        padding: 2rem 1rem;
+        color: #000;
+        text-align: center;
+        margin-top: 10rem;
+      }
+
+      .hero-section h1 {
+        color: #ed2024;
+      }
+
+      .hero-content-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        padding: 3rem 1rem;
+        flex-wrap: wrap;
+      }
+
+      .hero-text {
+        flex: 1 1 45%;
+        animation: slideInLeft 1s ease-in-out;
+      }
+
+      .hero-text h2 {
+        color: #ed2024;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero-text p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #333;
+      }
+
+      .hero-illustration {
+        flex: 1 1 45%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: floatImage 3s ease-in-out infinite;
+      }
+
+      .hero-illustration img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        transition: transform 0.3s;
+      }
+
+      .hero-illustration img:hover {
+        transform: scale(1.05);
+      }
+
+      /* Optional animation for extra creativity */
+      @keyframes floatImage {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      @keyframes slideInLeft {
+        0% {
+          transform: translateX(-100px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0px);
+          opacity: 1;
+        }
+      }
+
+      /* ─── “How We Work”: Process Section ───────────────────────────────────────────────── */
+
+      /* Container spacing */
+      .process-section {
+        padding: 4rem 1rem;
+      }
+
+      .process-section .section-heading {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        color: #ed2024;
+      }
+
+      /* Grid layout: 1–4 columns depending on width */
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 2rem;
+        align-items: start;
+      }
+
+      /* Individual step-card styling */
+      .process-card {
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 12px;
+        padding: 2rem 1.5rem;
+        text-align: center;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .process-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Number circle at top of each card */
+      .process-number {
+        width: 50px;
+        height: 50px;
+        margin: 0 auto 1rem;
+        /* background: var(--primary-color); */
+        color: #ed2024;
+        border: 1px solid #ed2024;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        font-weight: 700;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Card title uses the primary red color */
+      .process-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+        color: var(--primary-color);
+      }
+
+      /* Card text */
+      .process-card p {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+      }
+
+      /* ──────────────────────────────────────────────────────────────────────────────── */
+
+      section {
+        padding: 3rem 1rem;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin-bottom: 1rem;
+      }
+
+      .process-step {
+        margin-bottom: 2rem;
+        padding: 1rem;
+        border-left: 4px solid var(--primary-color);
+        background: #f9f9f9;
+      }
+
+      .tech-stack-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .tech-card {
+        background: #fff;
+        color: #000;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-left: 5px solid var(--primary-color);
+      }
+
+      .tech-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .tech-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+        color: #000;
+      }
+
+      @media (max-width: 575.98px) {
+        header,
+        section {
+          padding: 2rem 1rem;
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 991.98px) {
+        .process-step {
+          font-size: 1rem;
+        }
+      }
+
+      @media (min-width: 992px) and (max-width: 1199.98px) {
+        .tech-stack {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--=============== HEADER ===============-->
+    <header class="header ara--header">
+      <nav class="nav ara--nav container mx-auto">
+        <div class="nav__data ara--nav-content">
+          <a href="index.html" class="ara--nav-logo">
+            <img
+              src="assets/img/Ara Tech Logo.png"
+              class="img-fluid ms-3"
+              alt="Ara Tech Logo"
+            />
+          </a>
+
+          <!-- Responsive Buttons -->
+          <div class="nav__toggle ara--nav-toggle" id="nav-toggle">
+            <i class="ri-menu-line nav__toggle-menu ara--nav-toggle-menu"></i>
+            <i
+              class="ri-close-line nav__toggle-close ara--nav-toggle-close"
+            ></i>
+          </div>
+          <div class="nav-search-two">
+            <a href="#" class="nav__link">
+              <i class="ri-search-line icon-search" id="icon-search"></i>
+            </a>
+            <div class="box-2">
+              <input
+                type="search"
+                id="search-input"
+                placeholder="Search for product overviews and more..."
+              />
+              <i class="ri-close-line" id="close"></i>
+              <i class="ri-search-line" id="icon-2"></i>
+            </div>
+          </div>
+        </div>
+
+        <!--=============== NAV MENU ===============-->
+        <div class="nav__menu ara--nav-menu" id="nav-menu">
+          <ul class="nav__list ara--nav-list">
+            <li>
+              <a href="index.html" class="nav__link ara--nav-link">Home</a>
+            </li>
+            <!--=============== DROPDOWN 1 ===============-->
+            <li class="dropdown__item ara--nav-dropdown-item">
+              <div
+                class="ara--nav-link dropdown__button ara--nav-dropdown-button"
+              >
+                Solutions
+                <i
+                  class="ri-arrow-down-s-line dropdown__arrow ara--nav-dropdown-arrow"
+                ></i>
+              </div>
+              <div class="dropdown__container ara--nav-dropdown-container">
+                <div class="dropdown-left">
+                  <div class="dropdown__content ara--nav-dropdown-content">
+                    <div class="dropdown__group ara--nav-dropdown-group">
+                      <div class="dropdown__icon ara--nav-dropdown-icon">
+                        <i class="ri-graduation-cap-fill"></i>
+                      </div>
+                      <span class="dropdown__title ara--nav-dropdown-title"
+                        >Education</span
+                      >
+                      <ul class="dropdown__list ara--nav-dropdown-list">
+                        <li>
+                          <a
+                            href="#"
+                            class="dropdown__link ara--nav-dropdown-link"
+                            >Schoolmate</a
+                          >
+                        </li>
+                        <!-- <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">School Management</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Hotel Booking</a>
+                            </li> -->
+                      </ul>
+                    </div>
+                    <!-- <div class="dropdown__group ara--nav-dropdown-group">
+                         <div class="dropdown__icon ara--nav-dropdown-icon">
+                            <i class="ri-price-tag-3-line"></i>
+                         </div>
+                         <span class="dropdown__title ara--nav-dropdown-title">Retail</span>
+                         <ul class="dropdown__list ara--nav-dropdown-list">
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Billing Software</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">School Management</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Hotel Booking</a>
+                            </li>
+                         </ul>
+                      </div> -->
+                    <!-- <div class="dropdown__group ara--nav-dropdown-group">
+                         <div class="dropdown__icon ara--nav-dropdown-icon">
+                            <i class="ri-bar-chart-2-line"></i>
+                         </div>
+                         <span class="dropdown__title ara--nav-dropdown-title">Travel</span>
+                         <ul class="dropdown__list ara--nav-dropdown-list">
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Billing Software</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">School Management</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Hotel Booking</a>
+                            </li>
+                         </ul>
+                      </div> -->
+                    <!-- <div class="dropdown__group ara--nav-dropdown-group">
+                         <div class="dropdown__icon ara--nav-dropdown-icon">
+                            <i class="ri-macbook-fill"></i>
+                         </div>
+                         <span class="dropdown__title ara--nav-dropdown-title">IT Services</span>
+                         <ul class="dropdown__list ara--nav-dropdown-list">
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Billing Software</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">School Management</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Hotel Booking</a>
+                            </li>
+                         </ul>
+                      </div> -->
+                    <!-- <div class="dropdown__group ara--nav-dropdown-group">
+                         <div class="dropdown__icon ara--nav-dropdown-icon">
+                            <i class="ri-signal-tower-fill"></i>
+                         </div>
+                         <span class="dropdown__title ara--nav-dropdown-title">Telecommunication</span>
+                         <ul class="dropdown__list ara--nav-dropdown-list">
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Billing Software</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">School Management</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Hotel Booking</a>
+                            </li>
+                         </ul>
+                      </div> -->
+                    <!-- <div class="dropdown__group ara--nav-dropdown-group">
+                         <div class="dropdown__icon ara--nav-dropdown-icon">
+                            <i class="ri-government-line"></i>
+                         </div>
+                         <span class="dropdown__title ara--nav-dropdown-title">Government</span>
+                         <ul class="dropdown__list ara--nav-dropdown-list">
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Billing Software</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">School Management</a>
+                            </li>
+                            <li>
+                               <a href="#" class="dropdown__link ara--nav-dropdown-link">Hotel Booking</a>
+                            </li>
+                         </ul>
+                      </div> -->
+                  </div>
+                </div>
+                <div class="dropdown-right">
+                  <div class="right__content">
+                    <div class="team__group">
+                      <h6 class="ara-fw-semi-bold">Teams</h6>
+                      <div class="group-icon">
+                        <a href="" class="icon-link">
+                          <i class="ri-customer-service-fill"></i>
+                          <span class="ara--nav-dropdown-title"
+                            >Customer Support</span
+                          >
+                        </a>
+                      </div>
+                      <div class="group-icon">
+                        <a href="" class="icon-link">
+                          <i class="ri-checkbox-line"></i>
+                          <span class="ara--nav-dropdown-title"
+                            >IT Support</span
+                          ></a
+                        >
+                      </div>
+                      <div class="group-icon">
+                        <a href="" class="icon-link"
+                          ><i class="ri-building-fill"></i>
+                          <span class="ara--nav-dropdown-title"
+                            >Human Resources</span
+                          ></a
+                        >
+                      </div>
+                      <div class="group-icon">
+                        <a href="" class="icon-link"
+                          ><i class="ri-building-fill"></i>
+                          <span class="ara--nav-dropdown-title"
+                            >Facilities</span
+                          ></a
+                        >
+                      </div>
+                      <div class="group-icon">
+                        <a href="" class="icon-link"
+                          ><i class="ri-building-fill"></i>
+                          <span class="ara--nav-dropdown-title"
+                            >Marketing</span
+                          ></a
+                        >
+                      </div>
+                      <div class="group-icon">
+                        <a href="" class="icon-link"
+                          ><i class="ri-building-fill"></i>
+                          <span class="ara--nav-dropdown-title">Sales</span></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#" class="ara--nav-link">Customers</a>
+            </li>
+            <li>
+              <a href="about.html" class="ara--nav-link active">About Us</a>
+            </li>
+            <li>
+              <a href="contactus.html" class="ara--nav-link">Contact Us</a>
+            </li>
+            <li>
+              <a href="#" class="ara--nav-link">
+                <i class="ri-more-line"></i>
+              </a>
+            </li>
+
+            <!-- Responsive button -->
+            <li class="nav__responsive-demo ara--nav-responsive-demo">
+              <a href="#" class="nav__button ara--nav-button">Get a demo</a>
+            </li>
+          </ul>
+
+          <!-- Search Section -->
+          <div class="search-content">
+            <input
+              type="search"
+              id="search-box"
+              placeholder="Search for product overviews and more..."
+            />
+            <i class="ri-close-line close-btn" id="close-btn"></i>
+            <i class="ri-search-line" id="search-2"></i>
+          </div>
+        </div>
+        <div class="ara--nav-content nav__desk__button ara--nav-desk-button">
+          <a href="#" class="nav__link nav-search">
+            <i class="ri-search-line" id="search-icon"></i>
+          </a>
+          <a href="#" class="nav__button ara--nav-button">Get a demo</a>
+        </div>
+      </nav>
+    </header>
+    <!--=============== HEADER END ===============-->
+
+    <section class="hero-section" data-aos="fade-down">
+      <h1>
+        Our Structure. <br />
+        Our People. <br />
+        Our Vision. <br />
+      </h1>
+    </section>
+
+    <section class="hero-content-wrapper container" data-aos="fade-up">
+      <div class="hero-text">
+        <h2>About the Organization</h2>
+        <p>
+          ARA Discover Technologies is a division of ARA Discoveries Pvt Ltd,
+          designed to tackle digital transformation for modern businesses. Our
+          team brings together strategists, software engineers, project
+          managers, and support specialists who are passionate about building
+          smart, scalable solutions.
+        </p>
+      </div>
+      <div class="hero-illustration" data-aos="zoom-in">
+        <img src="./assets/img/aboutus.jpg" alt="Cute Tech Illustration" />
+      </div>
+    </section>
+
+    <section class="process-section container" data-aos="fade-left">
+      <h2 class="section-heading red-heading">How We Work</h2>
+      <div class="process-grid">
+        <div class="process-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="process-number">1</div>
+          <h3>Discovery & Consultation</h3>
+          <p>We understand your needs, goals, and existing systems.</p>
+        </div>
+
+        <div class="process-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="process-number">2</div>
+          <h3>UI/UX & Architecture</h3>
+          <p>
+            Our designers and architects create intuitive, efficient workflows.
+          </p>
+        </div>
+
+        <div class="process-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="process-number">3</div>
+          <h3>Development & Testing</h3>
+          <p>
+            We use agile methods to build, iterate, and perfect your product.
+          </p>
+        </div>
+
+        <div class="process-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="process-number">4</div>
+          <h3>Deployment & Support</h3>
+          <p>
+            We ensure a smooth launch and provide ongoing maintenance & updates.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" data-aos="fade-left">
+      <h2 style="color: #ed2024">Technology Stack</h2>
+      <div class="tech-stack-grid">
+        <div class="tech-card">
+          <h3>Frontend</h3>
+          <p>React, Angular, HTML5</p>
+        </div>
+        <div class="tech-card">
+          <h3>Backend</h3>
+          <p>Node.js, PHP, Laravel, Python</p>
+        </div>
+        <div class="tech-card">
+          <h3>Database</h3>
+          <p>MySQL, Firebase, MongoDB</p>
+        </div>
+        <div class="tech-card">
+          <h3>Cloud & DevOps</h3>
+          <p>AWS, Google Cloud, GitHub, Docker</p>
+        </div>
+        <div class="tech-card">
+          <h3>Mobile</h3>
+          <p>Android (Java/Kotlin), iOS (Swift), Flutter</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================ SECTION FOOTER START ============= -->
+    <section class="section-footer container-fluid p-5">
+      <div class="container p-5">
+        <div class="row mx-auto my-auto g-4 justify-content-lg-evenly">
+          <div class="col-lg-2 col-md-4 col-12">
+            <h4 class="ara-fw-semi-bold">Products</h4>
+            <a href="">Schoolmate</a>
+          </div>
+          <div class="col-lg-2 col-md-4 col-12">
+            <h4 class="ara-fw-semi-bold">Quick Links</h4>
+            <a href="">About Us</a> <br />
+            <a href="">Solutions</a> <br />
+            <a href="">Contact Us</a>
+          </div>
+          <div class="col-lg-2 col-md-4 col-12">
+            <h4 class="ara-fw-semi-bold">Support</h4>
+            <a href="">Help Center</a> <br />
+            <a href="">FAQs</a> <br />
+            <a href="">User Guides</a> <br />
+          </div>
+          <div class="col-lg-2 col-md-4 col-12">
+            <h4 class="ara-fw-semi-bold">Legel</h4>
+            <a href="">Privacy Policy </a> <br />
+            <a href="">Terms & Conditions</a> <br />
+          </div>
+          <div class="col-lg-2 col-md-4 col-12">
+            <h4 class="ara-fw-semi-bold">Contact Us</h4>
+            <a href="">Email</a> <br />
+            <a href="">Phone</a> <br />
+            <a href="">Address</a> <br />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= COPYRIGHT START ======== -->
+    <div
+      class="d-flex justify-content-center align-items-center w-100 copyright"
+    >
+      <h6>
+        © 2025, ARA Discover Technologies Pvt. Ltd. | Preserving Innovation.
+      </h6>
+    </div>
+    <!-- ========= COPYRIGHT END ======== -->
+    <!--=========== SECTION FOOTER END ============= -->
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+
+    <!-- ============ BOOTSTRAP JS =========== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    </script>
+  </body>
+</html>
